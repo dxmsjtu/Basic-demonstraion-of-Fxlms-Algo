@@ -8,6 +8,7 @@ D_p=10; %the primary path delay
 L=10;  %#filter
 f_dig=0.1;% the digital frequency
 type='white';% the white noise
+FontSize =24;
 % type='pink'; %the pink noise
 % type='sin';  % the pure tone noise
 for ite_1=1:ite_tao_s_est
@@ -22,8 +23,8 @@ for ite_1=1:ite_tao_s_est
         semilogy(t/fs,abs(e_ave))
         hold on
         grid on
-        xlabel('Time/s','Interpreter','latex','FontSize',12);
-        ylabel('MSE','Interpreter','latex','FontSize',12);
+        xlabel('Time/s','Interpreter','latex','FontSize',FontSize);
+        ylabel('MSE','Interpreter','latex','FontSize',FontSize);
     end
     hold off
     legend("$\tau_S="+int2str(taos(ite_1))+",\mu=$"+"1e-"+int2str(-log10(mu_all(1))),...
@@ -31,3 +32,4 @@ for ite_1=1:ite_tao_s_est
         'Interpreter','latex')
     ylim([1e-10,1e10])
 end
+Post_plot;
